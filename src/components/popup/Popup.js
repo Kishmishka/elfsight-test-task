@@ -120,7 +120,6 @@ const CloseIcon = styled.div`
   justify-content: center;
   align-items: center;
   background: #83bf46aa;
-  transition: 0.3s;
   &:before,
   &:after {
     content: '';

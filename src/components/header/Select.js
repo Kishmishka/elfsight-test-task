@@ -68,6 +68,7 @@ const SelectBody = styled.div`
   z-index: 2;
 `;
 const SelectContainer = styled.div`
+  -webkit-tap-highlight-color: transparent;
   min-width: 122px;
   text-align: center;
   font-size: 16px;
