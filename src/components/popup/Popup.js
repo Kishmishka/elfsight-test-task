@@ -51,7 +51,6 @@ export function Popup({ settings: { visible, content }, setSettings }) {
           type={type}
         />
         <PopupInfo origin={origin} location={location} />
-
         <PopupEpisodes episodes={episodes} />
       </PopupContent>
     </PopupContainer>
@@ -100,9 +99,9 @@ const PopupContent = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-
-  ${window.screen.width < 930 && 'width: 80%'};
-  ${window.screen.width < 600 && 'width: 95%'};
+  @media (max-width: 777px) {
+    max-width: 300px;
+  }
 `;
 
 const CloseIcon = styled.div`

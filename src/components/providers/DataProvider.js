@@ -2,7 +2,6 @@ import axios from 'axios';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 const API_URL = 'https://rickandmortyapi.com/api/character/';
-// const API_URL = new URL('https://rickandmortyapi.com/api/character/');
 
 export function DataProvider({ children }) {
   const [activePage, setActivePage] = useState(0);

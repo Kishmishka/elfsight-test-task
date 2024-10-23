@@ -6,9 +6,7 @@ import { useState } from 'react';
 
 export function Filter() {
   const { apiURL, setApiURL, setActivePage } = useData();
-  const [url, setUrl] = useState(
-    new URL('https://rickandmortyapi.com/api/character/')
-  );
+  const [url, setUrl] = useState(new URL(apiURL));
 
   function handleSelect(status, defaulValue) {
     if (status !== defaulValue) {
@@ -21,6 +19,12 @@ export function Filter() {
     setActivePage(0);
   }
 
+  function handleInput(event, query) {
+    url.searchParams.set(query, event.target.value);
+    setUrl(new URL(url));
+    setActivePage(0);
+  }
+
   useEffect(() => {
     setApiURL(url);
   }, [url]);
@@ -30,25 +34,19 @@ export function Filter() {
       <SortingInput
         placeholder="name"
         onChange={(event) => {
-          url.searchParams.set('name', event.target.value);
-          setUrl(new URL(url));
-          setActivePage(0);
+          handleInput(event, 'name');
         }}
       />
       <SortingInput
         placeholder="species"
         onChange={(event) => {
-          url.searchParams.set('species', event.target.value);
-          setUrl(new URL(url));
-          setActivePage(0);
+          handleInput(event, 'species');
         }}
       />
       <SortingInput
         placeholder="type"
         onChange={(event) => {
-          url.searchParams.set('type', event.target.value);
-          setUrl(new URL(url));
-          setActivePage(0);
+          handleInput(event, 'type');
         }}
       />
       <SelectContainer>
@@ -71,6 +69,9 @@ const SelectContainer = styled.div`
   display: flex;
   gap: 15px;
   justify-content: space-between;
+  @media (max-width: 777px) {
+    margin-left: 0;
+  }
 `;
 
 const SortingContainer = styled.div`
@@ -82,9 +83,13 @@ const SortingContainer = styled.div`
   gap: 15px;
   align-items: center;
   justify-content: center;
+  @media (max-width: 777px) {
+    flex-direction: column;
+  }
 `;
 
 const SortingInput = styled.input`
+  width: 25%;
   border: 2px solid #83bf46;
   border-radius: 5px;
   font-size: 16px;
@@ -95,5 +100,8 @@ const SortingInput = styled.input`
   transition: 0.3s;
   &:focus {
     border: 2px solid #a8f65a;
+  }
+  @media (max-width: 777px) {
+    width: 100%;
   }
 `;

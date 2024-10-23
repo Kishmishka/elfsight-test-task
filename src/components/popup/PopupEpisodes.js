@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import axios from 'axios';
 import { Loader, Text } from '../common';
 import arrowNext from '../../assets/icons/arrow-next.svg';
@@ -12,8 +12,7 @@ export function PopupEpisodes({ episodes }) {
   const [isFetching, setIsFetching] = useState(true);
   const [episodePageCount, setepisodePageCount] = useState(0);
   const [currentEpisodePage, setCurrentEpisodePage] = useState(1);
-
-  const countElementOnPage = 4;
+  const [countElementOnPage, setCountElementOnPage] = useState(1);
 
   useEffect(() => {
     if (!episodes?.length) {
@@ -53,9 +52,7 @@ export function PopupEpisodes({ episodes }) {
 
   return (
     <PopupEpisodesContent>
-      <Text fontSize="19px" color="white">
-        Participated in episodes:
-      </Text>
+      <PopupEpisodesTitle>Participated in episodes:</PopupEpisodesTitle>
       <PopupEpisodesContainer>
         {episodePageCount <= 1 || (
           <PopupEpisodesArrow
@@ -96,6 +93,13 @@ export function PopupEpisodes({ episodes }) {
 const PopupEpisodesContent = styled.div`
   width: 100%;
 `;
+const PopupEpisodesTitle = styled.span`
+  font-size: 19px;
+  color: white;
+  @media (max-width: 777px) {
+    font-size: 17px;
+  }
+`;
 const PopupEpisodesArrow = styled.img`
   cursor: pointer;
   transition: 0.3s;
@@ -104,8 +108,9 @@ const PopupEpisodesArrow = styled.img`
   }
 `;
 const PopupEpisodesContainer = styled.div`
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 `;
 const StyledPopupEpisodes = styled.div`
   display: flex;
@@ -114,12 +119,16 @@ const StyledPopupEpisodes = styled.div`
 `;
 
 const Episode = styled.p`
+  font-size: 18px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 10px 0;
+  @media (max-width: 777px) {
+    font-size: 16px;
+  }
 `;
 
 const EpisodeMarking = styled.span`

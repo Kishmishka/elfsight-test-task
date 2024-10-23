@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { CardStatus, CardTitle } from '../card';
 import { GenderIcon } from '../card/GenderIcon';
 
 export function PopupHeader({ image, name, gender, status, species, type }) {
@@ -40,9 +39,15 @@ const PopupHeaderTitle = styled.div`
   font-size: 23px;
   margin-bottom: 15px;
   gap: 7px;
+  @media (max-width: 777px) {
+    font-size: 19px;
+  }
 `;
 const PopupHeaderInfo = styled.div`
   font-size: 19px;
+  @media (max-width: 777px) {
+    font-size: 17px;
+  }
 `;
 const PopupHeaderStatus = styled.div`
   display: flex;

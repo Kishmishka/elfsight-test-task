@@ -7,7 +7,6 @@ export function Card({ status, name, species, gender, image, onClickHandler }) {
   return (
     <StyledCard onClick={onClickHandler}>
       <CardImg src={image} alt={name} />
-
       <CardInfo>
         <CardTitle name={name} gender={gender} />
         <CardStatus status={status} species={species} />
@@ -15,7 +14,6 @@ export function Card({ status, name, species, gender, image, onClickHandler }) {
     </StyledCard>
   );
 }
-
 const StyledCard = styled.div`
   display: flex;
   width: 100%;

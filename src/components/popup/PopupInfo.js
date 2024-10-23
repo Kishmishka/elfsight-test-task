@@ -4,20 +4,18 @@ import { Text } from '../common';
 export function PopupInfo({ origin, location }) {
   return (
     <StyledPopupInfo>
-      <div>
+      <PopupInfoContainer>
         First Seen in:
-        <br />
-        <Text color="#83bf46" fontSize="18px">
+        <TextDecoration>
           {origin?.name ? origin?.name : 'Unknown'}
-        </Text>
-      </div>
-      <div>
+        </TextDecoration>
+      </PopupInfoContainer>
+      <PopupInfoContainer>
         Last known location:
-        <br />
-        <Text color="#83bf46" fontSize="18px">
+        <TextDecoration>
           {location?.name ? location.name : 'Unknown'}
-        </Text>
-      </div>
+        </TextDecoration>
+      </PopupInfoContainer>
     </StyledPopupInfo>
   );
 }
@@ -29,4 +27,15 @@ const StyledPopupInfo = styled.div`
   gap: 5px;
   font-size: 19px;
   margin-bottom: 20px;
+  @media (max-width: 777px) {
+    font-size: 17px;
+  }
 `;
+const TextDecoration = styled.div`
+  color: #83bf46;
+  font-size: '18px';
+  @media (max-width: 777px) {
+    font-size: 16px;
+  }
+`;
+const PopupInfoContainer = styled.div``;
