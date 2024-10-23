@@ -101,8 +101,6 @@ const PopupContent = styled.div`
   }
   @media (max-width: 777px) {
     margin-top: calc(10vh - 20px);
-  }
-  @media (max-width: 777px) {
     max-width: 300px;
   }
 `;
@@ -138,6 +136,10 @@ const CloseIcon = styled.div`
   &:after {
     right: 4.5px;
     transform: rotate(45deg);
+  }
+  @media (max-width: 777px) {
+    top: -10px;
+    right: -10px;
   }
 
   ${window.screen.width < 930 && 'right: calc(10% - 10px)'};
