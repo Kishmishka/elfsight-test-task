@@ -36,6 +36,9 @@ body {
   padding: 0 calc(20px - (100vw - 100%)) 0 0; ;
   font-family: 'Roboto';
   background-color: #001832;
+  @media (max-width: 500px) {
+	padding: 0;
+  }
 }
 
 /* Links */
