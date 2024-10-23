@@ -54,7 +54,7 @@ export function PopupEpisodes({ episodes }) {
   return (
     <PopupEpisodesContent>
       <PopupEpisodesTitle>Participated in episodes:</PopupEpisodesTitle>
-      <PopupEpisodesContainer>
+      <PopupEpisodesContainer episodePageCount={episodePageCount}>
         {episodePageCount <= 1 || (
           <PopupEpisodesArrow
             onClick={() => prevPage()}
@@ -69,7 +69,11 @@ export function PopupEpisodes({ episodes }) {
               currentEpisodePage * countElementOnPage
             )
             ?.map(({ id, name, episode }) => (
-              <Episode key={id} _length={series.length}>
+              <Episode
+                key={id}
+                _length={series.length}
+                episodePageCount={episodePageCount}
+              >
                 <EpisodeMarking>
                   {episode
                     .replace(/S0?(\d+)/, 'Season $1 - ')
@@ -112,12 +116,13 @@ const PopupEpisodesArrow = styled.img`
 const PopupEpisodesContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ episodePageCount }) =>
+    episodePageCount <= 1 ? 'start' : 'space-between'};
 `;
 const StyledPopupEpisodes = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
 `;
 
 const Episode = styled.p`
@@ -125,8 +130,9 @@ const Episode = styled.p`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
+  align-items: ${({ episodePageCount }) =>
+    episodePageCount <= 1 ? 'start' : 'center'};
   padding: 10px 0;
   @media (max-width: 777px) {
     font-size: 16px;
@@ -134,6 +140,7 @@ const Episode = styled.p`
 `;
 
 const EpisodeMarking = styled.span`
+  text-align: center;
   margin-bottom: 8px;
   color: #83bf46;
 `;
