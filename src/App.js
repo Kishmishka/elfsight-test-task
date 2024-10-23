@@ -124,7 +124,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 20px 0;
+  padding: 0 20px;
   max-width: 1150px;
   margin: 0 auto;
   @media (max-width: 350px) {
@@ -134,6 +134,6 @@ const Main = styled.main`
   ${window.screen.width < 930 && 'max-width: 85%'};
   ${window.screen.width < 600 && 'max-width: 90%'};
   @media (max-width: 350px) {
-    padding: 0;
+    padding: 0 5px;
   }
 `;

@@ -130,7 +130,8 @@ const Episode = styled.p`
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: ${({ episodePageCount }) =>
+    episodePageCount <= 1 ? 'start' : 'center'};
   align-items: ${({ episodePageCount }) =>
     episodePageCount <= 1 ? 'start' : 'center'};
   padding: 10px 0;
@@ -140,7 +141,6 @@ const Episode = styled.p`
 `;
 
 const EpisodeMarking = styled.span`
-  text-align: center;
   margin-bottom: 8px;
   color: #83bf46;
 `;
