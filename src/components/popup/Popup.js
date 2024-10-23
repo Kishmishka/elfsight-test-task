@@ -100,6 +100,9 @@ const PopupContent = styled.div`
     display: none;
   }
   @media (max-width: 777px) {
+    margin-top: calc(10vh - 20px);
+  }
+  @media (max-width: 777px) {
     max-width: 300px;
   }
 `;
