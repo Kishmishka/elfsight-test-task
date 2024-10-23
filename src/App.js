@@ -124,7 +124,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
   max-width: 1150px;
   margin: 0 auto;
   @media (max-width: 350px) {
