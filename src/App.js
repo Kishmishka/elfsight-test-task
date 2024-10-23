@@ -126,10 +126,14 @@ const Main = styled.main`
   gap: 30px;
   padding: 20px 0;
   max-width: 1150px;
-  padding: 30px;
   margin: 0 auto;
-
+  @media (max-width: 350px) {
+    padding: 0;
+  }
   ${window.screen.width < 1200 && 'max-width: 95%'};
   ${window.screen.width < 930 && 'max-width: 85%'};
   ${window.screen.width < 600 && 'max-width: 90%'};
+  @media (max-width: 350px) {
+    padding: 0;
+  }
 `;
