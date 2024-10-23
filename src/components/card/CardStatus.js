@@ -41,11 +41,4 @@ const StyledCardStatus = styled.span`
   }
 `;
 
-const CardType = styled.p`
-  margin-top: 20px;
-  width: 100%;
-  color: #ddd;
-  font-size: 16px;
-`;
-
 const CardSpecies = styled.span``;

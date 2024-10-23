@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Loader, Text } from '../common';
+import { Loader } from '../common';
 import arrowNext from '../../assets/icons/arrow-next.svg';
 import arrowPrew from '../../assets/icons/arrow-prev.svg';
 
@@ -12,7 +12,8 @@ export function PopupEpisodes({ episodes }) {
   const [isFetching, setIsFetching] = useState(true);
   const [episodePageCount, setepisodePageCount] = useState(0);
   const [currentEpisodePage, setCurrentEpisodePage] = useState(1);
-  const [countElementOnPage, setCountElementOnPage] = useState(1);
+
+  const countElementOnPage = 1;
 
   useEffect(() => {
     if (!episodes?.length) {

@@ -82,15 +82,6 @@ const Page = styled.span`
     color: #83bf46;
   }
 `;
-
-const Container = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  justify-items: center;
-  gap: 30px;
-`;
-
 const Ellipsis = styled(Page)`
   cursor: default;
 
