@@ -68,13 +68,15 @@ const SelectContainer = styled.div`
   margin-left: 15px;
   display: flex;
   gap: 15px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   @media (max-width: 777px) {
+    width: 100%;
     margin-left: 0;
   }
 `;
 
 const SortingContainer = styled.div`
+  min-width: 300px;
   border: 2px solid #263750;
   padding: 15px;
   border-radius: 20px;
@@ -84,7 +86,10 @@ const SortingContainer = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: 777px) {
+    width: 100%;
     flex-direction: column;
+  }
+  @media (max-width: 490px) {
   }
 `;
 

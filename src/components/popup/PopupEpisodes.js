@@ -102,6 +102,7 @@ const PopupEpisodesTitle = styled.span`
   }
 `;
 const PopupEpisodesArrow = styled.img`
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   transition: 0.3s;
   &:hover {

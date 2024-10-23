@@ -108,6 +108,7 @@ const PopupContent = styled.div`
 `;
 
 const CloseIcon = styled.div`
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   position: absolute;
   top: -10px;

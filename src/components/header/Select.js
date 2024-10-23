@@ -91,9 +91,6 @@ const SelectHeader = styled.div`
     border: 2px solid #a8f65a;
   }
 `;
-const SelectCurrent = styled.span``;
-const SelectIcon = styled.img``;
-
 const SelectItem = styled.div`
   padding: 5px 10px;
   transition: 0.3s;
@@ -101,3 +98,5 @@ const SelectItem = styled.div`
     background-color: #2f4464;
   }
 `;
+const SelectCurrent = styled.span``;
+const SelectIcon = styled.img``;
