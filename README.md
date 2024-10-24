@@ -2,4 +2,4 @@
 
 Скрип для запуска: `npm run start`
 
-[Ссылка на деплой](elfsight-test-task-nine.vercel.app)
+elfsight-test-task-nine.vercel.app
